@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<title>SPOJ Compare Tool</title>
+	<link rel=stylesheet type=text/css href="/static/style.css">
+</head>
+<body>
+	<h1>
+		Comparing
+		<a href="http://www.spoj.pl/users/{{user1}}/">{{user1}}</a>
+		and
+		<a href="http://www.spoj.pl/users/{{user2}}/">{{user2}}</a>
+	</h1>
+
+	<div class='user'>
+		{{user1}} has solved {{count1}} problems: 
+		{% for p in list1 %}
+			<a href="http://www.spoj.pl/problems/{{p}}/">{{p}}</a>,  
+		{% endfor %}
+	</div>
+	<br/>
+	<div class='user'>
+		{{user2}} has solved {{count2}} problems: 
+		{% for p in list2 %}
+			<a href="http://www.spoj.pl/problems/{{p}}/">{{p}}</a>, 
+		{% endfor %}
+	</div>
+	<br/>
+	<div class='both'>
+		Both have solved {{bothCount}} problems:
+		{% for p in bothList %}
+			<a href="http://www.spoj.pl/problems/{{p}}/">{{p}}</a>, 
+		{% endfor %}
+	</div>
+</body>
+</html>
