@@ -11,7 +11,7 @@ def getSolvedProblems(user):
 	"""Returns sorted list of strings consisting of the SPOJ problems the given
 	user has solved. If the user doesn't exist, an empty list is returned."""
 
-	spojContent = request.urlopen(URL + user).read()
+	spojContent = str(request.urlopen(URL + user).read())
 
 	if LIST_SOLVED not in spojContent:
 		return []
@@ -36,8 +36,8 @@ def getSolvedLists(user1, user2):
 	s2 contains the problems user2 has solved and user1 hasn't.
 	both contains the problems both user1 and user1 have solved ."""
 
-	s1 = set(getProblems(user1))
-	s2 = set(getProblems(user2))
+	s1 = set(getSolvedProblems(user1))
+	s2 = set(getSolvedProblems(user2))
 
 	uniq1 = [s for s in s1 if s not in s2]
 	uniq1.sort()
