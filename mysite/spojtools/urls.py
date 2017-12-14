@@ -3,6 +3,6 @@ from . import views
 
 app_name = "spojtools"
 urlpatterns = [
-	# /polls/
+	# /spojtools/
 	path("", views.index, name="index"),
 ]

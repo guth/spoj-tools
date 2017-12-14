@@ -1,7 +1,10 @@
-from django.shortcuts import render
-
-# Create your views here.
+from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.shortcuts import get_object_or_404, render
+# There's also get_list_or_404, which uses filter() instead of get()
+from django.template import loader
+from django.urls import reverse
+from django.utils import timezone
+from django.views import generic
 
 def index(request):
-	# TODO: Fill this out
-	return 1
+	return render(request, "spojtools/index.html")

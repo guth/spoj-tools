@@ -100,3 +100,6 @@ virt-env/
 
 # mypy
 .mypy_cache/
+
+# sqlite files. TODO: Remove it entirely.
+db.sqlite3
